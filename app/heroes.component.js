@@ -9,26 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var hero_service_1 = require('./hero.service');
+var bill_service_1 = require('./bill.service');
 var router_1 = require('@angular/router');
 var HeroesComponent = (function () {
-    function HeroesComponent(heroService, router) {
-        this.heroService = heroService;
+    // onSelect(bill: Bill): void {
+    // this.selectedBill = bill;
+    // }
+    function HeroesComponent(billService, router) {
+        this.billService = billService;
         this.router = router;
-        this.title = 'Tour of Heroes';
     }
-    HeroesComponent.prototype.onSelect = function (hero) {
-        this.selectedHero = hero;
-    };
-    HeroesComponent.prototype.getHeroes = function () {
+    HeroesComponent.prototype.getBills = function () {
         var _this = this;
-        this.heroService.getHeroes().then(function (heros) { return _this.heroes = heros; });
+        this.billService.getBills().then(function (bills) { return _this.bills = bills; });
     };
     HeroesComponent.prototype.ngOnInit = function () {
-        this.getHeroes();
+        this.getBills();
     };
-    HeroesComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/detail', this.selectedHero.id]);
+    HeroesComponent.prototype.gotoDetail = function (bill) {
+        this.router.navigate(['/detail', bill.id]);
     };
     HeroesComponent = __decorate([
         core_1.Component({
@@ -37,9 +36,27 @@ var HeroesComponent = (function () {
             templateUrl: 'heroes.component.html',
             styleUrls: ['heroes.component.css']
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.Router])
+        __metadata('design:paramtypes', [bill_service_1.BillService, router_1.Router])
     ], HeroesComponent);
     return HeroesComponent;
 }());
 exports.HeroesComponent = HeroesComponent;
+// export class HeroesComponent { 
+//   title = 'Tour of Heroes';
+//   selectedHero: Hero;
+//   heroes : Hero[];
+//   onSelect(hero: Hero): void {
+//   this.selectedHero = hero;
+//   }
+//   constructor(private heroService: HeroService , private router : Router) { }
+//   getHeroes(): void {
+//     this.heroService.getHeroes().then(heros => this.heroes = heros);
+//   }
+//    ngOnInit(): void {
+//     this.getHeroes();
+//   }
+//   gotoDetail(): void {
+//   this.router.navigate(['/detail', this.selectedHero.id]);
+//   }
+// }
 //# sourceMappingURL=heroes.component.js.map
