@@ -3,29 +3,31 @@ import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
-import { BillService } from './bill.service';
-import { Bill } from './bill';
+import { MinisterService } from './minister.service';
+import { Minister } from './minister';
+
 
 @Component({
   moduleId: module.id,
-  selector: 'my-hero-detail',
-  templateUrl: 'hero-detail.component.html'
+  selector: 'my-minister-detail',
+  templateUrl: 'minister-detail.component.html'
 })
-export class HeroDetailComponent implements OnInit {
+
+export class MinisterDetailComponent implements OnInit {
 
   constructor(
-  private billService: BillService,
+  private ministerService: MinisterService,
   private route: ActivatedRoute,
   private location: Location
  ) {}
 
 	@Input()
-	bill: Bill;
+	minister: Minister;
 
   ngOnInit(): void {
   this.route.params
-    .switchMap((params: Params) => this.billService.getBill(+params['id']))
-    .subscribe(bill => this.bill = bill);
+    .switchMap((params: Params) => this.ministerService.getMinister(+params['id']))
+    .subscribe(minister => this.minister = minister);
   }
 
   goBack(): void {

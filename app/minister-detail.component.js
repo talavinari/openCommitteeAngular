@@ -12,36 +12,36 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
 require('rxjs/add/operator/switchMap');
-var bill_service_1 = require('./bill.service');
-var bill_1 = require('./bill');
-var HeroDetailComponent = (function () {
-    function HeroDetailComponent(billService, route, location) {
-        this.billService = billService;
+var minister_service_1 = require('./minister.service');
+var minister_1 = require('./minister');
+var MinisterDetailComponent = (function () {
+    function MinisterDetailComponent(ministerService, route, location) {
+        this.ministerService = ministerService;
         this.route = route;
         this.location = location;
     }
-    HeroDetailComponent.prototype.ngOnInit = function () {
+    MinisterDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
-            .switchMap(function (params) { return _this.billService.getBill(+params['id']); })
-            .subscribe(function (bill) { return _this.bill = bill; });
+            .switchMap(function (params) { return _this.ministerService.getMinister(+params['id']); })
+            .subscribe(function (minister) { return _this.minister = minister; });
     };
-    HeroDetailComponent.prototype.goBack = function () {
+    MinisterDetailComponent.prototype.goBack = function () {
         this.location.back();
     };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', bill_1.Bill)
-    ], HeroDetailComponent.prototype, "bill", void 0);
-    HeroDetailComponent = __decorate([
+        __metadata('design:type', minister_1.Minister)
+    ], MinisterDetailComponent.prototype, "minister", void 0);
+    MinisterDetailComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-hero-detail',
-            templateUrl: 'hero-detail.component.html'
+            selector: 'my-minister-detail',
+            templateUrl: 'minister-detail.component.html'
         }), 
-        __metadata('design:paramtypes', [bill_service_1.BillService, router_1.ActivatedRoute, common_1.Location])
-    ], HeroDetailComponent);
-    return HeroDetailComponent;
+        __metadata('design:paramtypes', [minister_service_1.MinisterService, router_1.ActivatedRoute, common_1.Location])
+    ], MinisterDetailComponent);
+    return MinisterDetailComponent;
 }());
-exports.HeroDetailComponent = HeroDetailComponent;
-//# sourceMappingURL=hero-detail.component.js.map
+exports.MinisterDetailComponent = MinisterDetailComponent;
+//# sourceMappingURL=minister-detail.component.js.map

@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent }   from './dashboard.component';
 import { HeroesComponent }      from './heroes.component';
 import { HeroDetailComponent }  from './hero-detail.component';
+import { MinisterDetailComponent }  from './minister-detail.component';
 
 const routes: Routes = [
-  { path: 'dashboard',  component: DashboardComponent },
+  { path: 'minister',  component: DashboardComponent },
+  { path: 'minister/:id',  component: MinisterDetailComponent },
   { path: 'bills/:id', component: HeroDetailComponent },
   { path: 'bills',     component: HeroesComponent }
 ];
@@ -14,5 +16,5 @@ const routes: Routes = [
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {
-  
+
 }

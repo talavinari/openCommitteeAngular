@@ -1,21 +1,20 @@
 import { Component } from '@angular/core';
 
-import { Hero } from './hero';
-import { HeroService } from './hero.service';
+import { Minister } from './Minister';
+import { MinisterService } from './minister.service';
 
 @Component({
   moduleId: module.id,
   selector: 'my-dashboard',
-  templateUrl: 'dashboard.component.html',
-  styleUrls:[ 'dashboard.component.css' ]
+  templateUrl: 'dashboard.component.html'
 })
 export class DashboardComponent {
-   heroes: Hero[] = [];
+   ministers: Minister[] = [];
 
-   constructor(private heroService: HeroService) { }
+   constructor(private ministerService: MinisterService) { }
 
    ngOnInit(): void {
-    this.heroService.getHeroes()
-      .then(heroes => this.heroes = heroes.slice(1, 5));
+     this.ministerService.getMinisters()
+       .then(ministers => this.ministers = ministers);
   }
  }

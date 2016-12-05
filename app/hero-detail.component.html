@@ -1,4 +1,76 @@
-<div *ngIf="bill">
+<div *ngIf="bill"  class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <a *ngIf="bill.oknesset_url != ''" target= "_blank" href="{{ bill.oknesset_url}}">
+                    <h1 title="שם ההצעה">
+                        {{ bill.name }}
+                    </h1>
+                </a>
+                <h1 *ngIf="bill.oknesset_url == ''" title="שם ההצעה">
+                        {{ bill.name }}
+                </h1>
+            </div>
+                <div *ngIf="bill.passed != null" class="col-md-2 decision">
+                    <h2 class="pull-left" title="החלטת הועדה">
+                        <span *ngIf="bill.passed" class="badge" style="background-color:green; vertical-align:middle; font-size:24px;">
+                    עבר בועדה
+                        </span>
+                        <span *ngIf="!bill.passed" class="badge" style="background-color:red; vertical-align:middle; font-size:24px;">
+                        נפל בועדה   
+                        </span>
+                    </h2>
+                </div>
+        </div>
+<!--
+        <div class="row">
+            {% for vote_type, votes in votes_by_type %}
+                <div class="col-md-4 voteType">
+                    <h4 class="bill-vote {{ vote_type | vote_style }}">
+                        {{ vote_type }}
+                    </h4>
+                    {% for v in votes %}
+                        <div class="minister-photo">
+                            <a href="{% url 'minister' v.minister.id %}">
+                                {% if 'http' in v.minister.photo %}
+                                    <img src="{{ v.minister.photo }}.jpg" style="width: 75px; height: 110px">
+                                {% else %}
+                                    <img src="{{ MEDIA_URL }}{{ v.minister.photo }}-s.jpg">
+                                {% endif %}
+                                {{ v.minister }}
+                            </a>
+                        </div>
+                    {% endfor %}
+                    {% if not votes %}
+                        <div class="no-votes">
+                        אין הצבעות
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+<hr/>
+        <div class="row">
+            <div class="col-md-12 voteType">
+                <h4>
+                    אינם חושפים את הצבעתם
+                </h4>
+                {% for m in unknown_ministers %}
+                    <div class="minister-photo missing">
+                        <a href="{% url 'minister' m.id %}">
+                            {% if 'http' in m.photo %}
+                                <img src="{{ m.photo }}.jpg" style="width: 75px; height: 110px">
+                            {% else %}
+                                <img src="{{ MEDIA_URL }}{{ m.photo }}-s.jpg">
+                            {% endif %}
+                            {{ m }}
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>-->
+    </div> 
+
+<!--<div *ngIf="bill">
     <h2>{{bill.name}} details!</h2>
     
     <div><label>id: </label>{{bill.id}}</div>
@@ -7,4 +79,4 @@
       <input [(ngModel)]="bill.name" placeholder="name">
     </div>
     <button (click)="goBack()">Back</button>
-</div>
+</div>-->

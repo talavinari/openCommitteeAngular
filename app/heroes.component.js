@@ -30,8 +30,7 @@ var HeroesComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'my-heroes',
-            templateUrl: 'heroes.component.html',
-            styleUrls: ['site.css']
+            templateUrl: 'heroes.component.html'
         }), 
         __metadata('design:paramtypes', [bill_service_1.BillService, router_1.Router])
     ], HeroesComponent);

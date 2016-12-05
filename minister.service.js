@@ -9,20 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'ועדת שרים פתוחה';
+var minister_1 = require('./minister');
+var MinisterService = (function () {
+    function MinisterService() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-app',
-            template: "\n        <h1>{{title}}</h1>\n         <nav>\n           <a routerLink=\"/minister\" routerLinkActive=\"active\">\u05D4\u05E9\u05E8\u05D9\u05DD</a>\n           <a routerLink=\"/bills\" routerLinkActive=\"active\">\u05D4\u05E6\u05E2\u05D5\u05EA \u05D7\u05D5\u05E7</a>\n          </nav>\n        <router-outlet></router-outlet>\n      ",
-            styleUrls: ['app.component.css']
-        }), 
+    MinisterService.prototype.getMinisters = function () {
+        return Promise.resolve(minister_1.Minister);
+    };
+    MinisterService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], MinisterService);
+    return MinisterService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.MinisterService = MinisterService;
+//# sourceMappingURL=minister.service.js.map

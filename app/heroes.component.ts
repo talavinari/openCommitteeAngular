@@ -6,8 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   moduleId:module.id,
   selector: 'my-heroes',
-  templateUrl: 'heroes.component.html',
-  styleUrls: [ 'site.css' ]
+  templateUrl: 'heroes.component.html'
 })
 
 export class HeroesComponent { 
