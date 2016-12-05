@@ -1,33 +1,30 @@
-<h2>הצעות חוק</h2>
-<ul>
-   
-    <li  *ngFor="let bill of bills"  
-  [class.selected]="bill === selectedBill"
-  (click)="gotoDetail(bill)">
-  <a> 
-   {{bill.name}}
-   </a>
-   {{bill.passed}}
-    </li>
-</ul>
-<!--<div *ngIf="selectedBill">
-  <h2>
-    {{selectedBill.name | uppercase}} is my hero
-  </h2>
-  <button (click)="gotoDetail()">View Details</button>
- </div>-->
-<!-- 
-<h2>הצעות חוק</h2>
-<ul class="heroes">
-  <li  *ngFor="let hero of heroes"  
-  [class.selected]="hero === selectedHero"
-  (click)="onSelect(hero)">
-	 <span class="badge">{{hero.id}}</span> {{hero.name}}
-  </li>
-</ul>
-<div *ngIf="selectedHero">
-  <h2>
-    {{selectedHero.name | uppercase}} is my hero
-  </h2>
-  <button (click)="gotoDetail()">View Details</button>
- </div>-->
+<div class="container">
+    <div class="row">
+        <div class="cards col-md-12">
+            <section class="card card-list card-list-latest compact">
+                <header>
+                    <h2 title="שם ההצעה">
+                        הצעות חוק
+                    </h2>
+                </header>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th class="text-right">
+                            שם ההצעה
+                        </th>
+                        <th>
+                            החלטת הועדה
+                        </th>
+                    </tr>
+                    </thead> 
+                      <tr  *ngFor="let bill of bills">
+                        <td><a routerLink='/bills/{{bill.id}}'>{{bill.name}}</a></td>
+                        <td class="minister-vote" [ngClass]="{yay: bill.passed,nay: !bill.passed}" >
+                           {{true == bill.passed ? 'בעד' : 'נגד' }}
+                        </td>
+                </table>
+            </section>
+        </div>
+    </div>
+</div>

@@ -15,7 +15,7 @@ var heroes_component_1 = require('./heroes.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var routes = [
     { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
-    { path: 'detail/:id', component: hero_detail_component_1.HeroDetailComponent },
+    { path: 'bills/:id', component: hero_detail_component_1.HeroDetailComponent },
     { path: 'bills', component: heroes_component_1.HeroesComponent }
 ];
 var AppRoutingModule = (function () {

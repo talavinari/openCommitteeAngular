@@ -6,11 +6,13 @@ import { HeroDetailComponent }  from './hero-detail.component';
 
 const routes: Routes = [
   { path: 'dashboard',  component: DashboardComponent },
-  { path: 'detail/:id', component: HeroDetailComponent },
+  { path: 'bills/:id', component: HeroDetailComponent },
   { path: 'bills',     component: HeroesComponent }
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+  
+}

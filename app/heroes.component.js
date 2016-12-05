@@ -12,9 +12,6 @@ var core_1 = require('@angular/core');
 var bill_service_1 = require('./bill.service');
 var router_1 = require('@angular/router');
 var HeroesComponent = (function () {
-    // onSelect(bill: Bill): void {
-    // this.selectedBill = bill;
-    // }
     function HeroesComponent(billService, router) {
         this.billService = billService;
         this.router = router;
@@ -34,29 +31,11 @@ var HeroesComponent = (function () {
             moduleId: module.id,
             selector: 'my-heroes',
             templateUrl: 'heroes.component.html',
-            styleUrls: ['heroes.component.css']
+            styleUrls: ['site.css']
         }), 
         __metadata('design:paramtypes', [bill_service_1.BillService, router_1.Router])
     ], HeroesComponent);
     return HeroesComponent;
 }());
 exports.HeroesComponent = HeroesComponent;
-// export class HeroesComponent { 
-//   title = 'Tour of Heroes';
-//   selectedHero: Hero;
-//   heroes : Hero[];
-//   onSelect(hero: Hero): void {
-//   this.selectedHero = hero;
-//   }
-//   constructor(private heroService: HeroService , private router : Router) { }
-//   getHeroes(): void {
-//     this.heroService.getHeroes().then(heros => this.heroes = heros);
-//   }
-//    ngOnInit(): void {
-//     this.getHeroes();
-//   }
-//   gotoDetail(): void {
-//   this.router.navigate(['/detail', this.selectedHero.id]);
-//   }
-// }
 //# sourceMappingURL=heroes.component.js.map
