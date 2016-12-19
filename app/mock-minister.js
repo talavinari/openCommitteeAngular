@@ -1,4 +1,16 @@
 "use strict";
+exports.MINISTERS_DETAILS = [
+    { "id": 1,
+        "name": "איילת שקד",
+        "photo_url": "http://www.knesset.gov.il/mk/images/members/shaked_ayelet.jpg (111KB)",
+        "coop": true,
+        "title": "שרת המשפטים",
+        "facebook": "https://www.facebook.com/ayelet.benshaul.shaked",
+        "twitter": "https://twitter.com/ayelet__shaked",
+        "mail": "ashaked@knesset.gov.il",
+        "phone": "02-6408401",
+        "oknesset": "https://oknesset.org/member/904/%D7%90%D7%99%D7%99%D7%9C%D7%AA-%D7%A9%D7%A7%D7%93/"
+    }];
 exports.MINISTERS = [
     {
         "id": 1,

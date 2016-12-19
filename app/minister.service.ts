@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Minister } from './minister';
-import { MINISTERS } from './mock-minister';
+import { MINISTERS, MINISTERS_DETAILS } from './mock-minister';
 
 @Injectable()
 export class MinisterService {
@@ -9,8 +9,13 @@ export class MinisterService {
        return Promise.resolve(MINISTERS);
     }
 
+    // getMinistersWithDetails(): Promise<Minister[]>
+    // {
+    //    return Promise.resolve(MINISTERS_DETAILS);
+    // }
+    
     getMinister(id: number): Promise<Minister> {
         return this.getMinisters()
-            .then(ministers => ministers.find(bill => bill.id === id));
+            .then(ministers => ministers.find(minister => minister.id === id));
     }
 }

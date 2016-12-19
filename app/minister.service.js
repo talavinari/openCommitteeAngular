@@ -16,9 +16,13 @@ var MinisterService = (function () {
     MinisterService.prototype.getMinisters = function () {
         return Promise.resolve(mock_minister_1.MINISTERS);
     };
+    // getMinistersWithDetails(): Promise<Minister[]>
+    // {
+    //    return Promise.resolve(MINISTERS_DETAILS);
+    // }
     MinisterService.prototype.getMinister = function (id) {
         return this.getMinisters()
-            .then(function (ministers) { return ministers.find(function (bill) { return bill.id === id; }); });
+            .then(function (ministers) { return ministers.find(function (minister) { return minister.id === id; }); });
     };
     MinisterService = __decorate([
         core_1.Injectable(), 
