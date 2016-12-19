@@ -9,13 +9,18 @@ export class MinisterService {
        return Promise.resolve(MINISTERS);
     }
 
-    // getMinistersWithDetails(): Promise<Minister[]>
-    // {
-    //    return Promise.resolve(MINISTERS_DETAILS);
-    // }
+    getMinistersWithDetails(): Promise<Minister[]>
+    {
+       return Promise.resolve(MINISTERS_DETAILS);
+    }
     
+    getMinsterDetail(id: number): Promise<Minister> {
+        return  this.getMinistersWithDetails()
+            .then(ministers => ministers.find(minister => minister.id === id));
+    }
+
     getMinister(id: number): Promise<Minister> {
-        return this.getMinisters()
+        return  this.getMinisters()
             .then(ministers => ministers.find(minister => minister.id === id));
     }
 }

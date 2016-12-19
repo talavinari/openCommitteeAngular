@@ -3,7 +3,7 @@ import { Minister } from './minister';
 export const MINISTERS_DETAILS: Minister[]=[
 { "id": 1,
    "name": "איילת שקד",
-   "photo_url": "http://www.knesset.gov.il/mk/images/members/shaked_ayelet.jpg (111KB)",
+   "photo_url": "http://www.knesset.gov.il/mk/images/members/shaked_ayelet.jpg",
    "coop": true,
    "title": "שרת המשפטים",
    "facebook": "https://www.facebook.com/ayelet.benshaul.shaked",

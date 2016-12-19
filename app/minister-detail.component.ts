@@ -18,15 +18,14 @@ export class MinisterDetailComponent implements OnInit {
   constructor(
   private ministerService: MinisterService,
   private route: ActivatedRoute,
-  private location: Location
- ) {}
+  private location: Location) {}
 
 	@Input()
 	minister: Minister;
 
   ngOnInit(): void {
   this.route.params
-    .switchMap((params: Params) => this.ministerService.getMinister(+params['id']))
+    .switchMap((params: Params) => this.ministerService.getMinsterDetail(+params['id']))
     .subscribe(minister => this.minister = minister);
   }
 

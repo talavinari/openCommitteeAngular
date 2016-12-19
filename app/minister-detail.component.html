@@ -1,3 +1,79 @@
-<h1>
-    {{minister.id}}
-</h1>
+<div *ngIf="minister" class="container">
+    <div class="row">
+        <div class="cards col-md-8">
+            <div class="pull-left">
+                <a *ngIf="minister.twitter" href="{{ minister.twitter }}" target="_blank" class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-inverse fa-stack-1x"></i>
+                </a>
+                <a *ngIf="minister.facebook" href="{{ minister.facebook }}" target="_blank" class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-inverse fa-stack-1x"></i>
+                </a>
+                <a *ngIf="minister.mail" href="mailto:{{ minister.mail }}" class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-inverse fa-stack-1x"></i>
+                </a>
+                <a *ngIf="minister.phone" class="fa-stack fa-lg" title="{{ minister.phone }}">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-phone fa-inverse fa-stack-1x"></i>
+                </a>
+                <a *ngIf="minister.oknesset" href="{{ minister.oknesset }}" target="_blank" class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-institution fa-inverse fa-stack-1x"></i>
+                </a>
+            </div>
+            <h2 class="minister-title">
+                {{ minister.name }}
+            </h2>
+            <hr class="minister-hr">
+
+            <h3 *ngIf="minister.title" class="minister-view">
+                {{ minister.title }}
+            </h3>
+
+            <h3 *ngIf="!minister.coop">
+                שר זה אינו חושף את הצבעותיו!
+            </h3>
+            <!--
+                {% if votes %}
+                    <section class="card card-list card-list-latest compact">
+                        <header>
+                            <h2>
+                                הצבעות
+                            </h2>
+                        </header>
+
+
+                        <table class="table table-hover">
+                            <thead>
+                            <th>
+                                שם ההצעה
+                            </th>
+                            <th>
+                                הצביע
+                            </th>
+                            </thead>
+                            {% for v in votes %}
+                                <tr>
+                                    <td><a href="{% url 'bill' v.bill.id %}">{{ v.bill }}</a></td>
+                                    <td class="minister-vote {{ v.vote | vote_style }}">{{ v.vote }}</td>
+                                </tr>
+                            {% endfor %}
+
+                        </table>
+                    </section>
+                {% else %}
+                    <h3>
+                                אין הצבעות
+                    </h3>
+                {% endif %}
+            {% endif %}-->
+        </div>
+        <div class="col-md-4 hidden-sm hidden-xs">
+            <div class="pull-left">
+                <img src="{{ minister.photo_url}}">
+            </div>
+        </div>
+    </div>
+</div>

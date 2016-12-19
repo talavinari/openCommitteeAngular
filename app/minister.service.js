@@ -16,10 +16,13 @@ var MinisterService = (function () {
     MinisterService.prototype.getMinisters = function () {
         return Promise.resolve(mock_minister_1.MINISTERS);
     };
-    // getMinistersWithDetails(): Promise<Minister[]>
-    // {
-    //    return Promise.resolve(MINISTERS_DETAILS);
-    // }
+    MinisterService.prototype.getMinistersWithDetails = function () {
+        return Promise.resolve(mock_minister_1.MINISTERS_DETAILS);
+    };
+    MinisterService.prototype.getMinsterDetail = function (id) {
+        return this.getMinistersWithDetails()
+            .then(function (ministers) { return ministers.find(function (minister) { return minister.id === id; }); });
+    };
     MinisterService.prototype.getMinister = function (id) {
         return this.getMinisters()
             .then(function (ministers) { return ministers.find(function (minister) { return minister.id === id; }); });

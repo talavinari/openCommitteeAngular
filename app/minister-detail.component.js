@@ -23,7 +23,7 @@ var MinisterDetailComponent = (function () {
     MinisterDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
-            .switchMap(function (params) { return _this.ministerService.getMinister(+params['id']); })
+            .switchMap(function (params) { return _this.ministerService.getMinsterDetail(+params['id']); })
             .subscribe(function (minister) { return _this.minister = minister; });
     };
     MinisterDetailComponent.prototype.goBack = function () {
