@@ -17,6 +17,7 @@ var minister_detail_component_1 = require('./minister-detail.component');
 var heroes_component_1 = require('./heroes.component');
 var dashboard_component_1 = require('./dashboard.component');
 var hero_service_1 = require('./hero.service');
+var about_component_1 = require('./about.component');
 var bill_service_1 = require('./bill.service');
 var minister_service_1 = require('./minister.service');
 var app_routing_module_1 = require('./app-routing.module');
@@ -30,7 +31,8 @@ var AppModule = (function () {
                 hero_detail_component_1.HeroDetailComponent,
                 heroes_component_1.HeroesComponent,
                 dashboard_component_1.DashboardComponent,
-                minister_detail_component_1.MinisterDetailComponent
+                minister_detail_component_1.MinisterDetailComponent,
+                about_component_1.AboutComponent
             ],
             providers: [hero_service_1.HeroService, bill_service_1.BillService, minister_service_1.MinisterService],
             bootstrap: [app_component_1.AppComponent]

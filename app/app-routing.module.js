@@ -12,13 +12,15 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var dashboard_component_1 = require('./dashboard.component');
 var heroes_component_1 = require('./heroes.component');
+var about_component_1 = require('./about.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var minister_detail_component_1 = require('./minister-detail.component');
 var routes = [
     { path: 'minister', component: dashboard_component_1.DashboardComponent },
     { path: 'minister/:id', component: minister_detail_component_1.MinisterDetailComponent },
     { path: 'bills/:id', component: hero_detail_component_1.HeroDetailComponent },
-    { path: 'bills', component: heroes_component_1.HeroesComponent }
+    { path: 'bills', component: heroes_component_1.HeroesComponent },
+    { path: 'about', component: about_component_1.AboutComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
