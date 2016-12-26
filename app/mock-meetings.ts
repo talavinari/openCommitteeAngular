@@ -8,7 +8,7 @@ export const DetailedMettings: Meeting[]=[
             "id": 1,
             "name": "החלת דין רציפות על הצעת חוק לתיקון פקודת הרוקחים (מס' 23) עונשין, עיצום כספי וסמכויות פיקוח",
             "oknesset_url": "https://oknesset.org/bill/8736/",
-            "passed": true
+            "passed": false
         },
         {
 

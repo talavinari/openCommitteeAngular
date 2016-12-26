@@ -21,9 +21,9 @@
                 </th>
             </tr>
             </thead>
-            <tr *ngFor="let minister of meeting.voting_ministers">
+            <tr>
                 <td>
-                    <div class="minister-photo">
+                    <div *ngFor="let minister of meeting.voting_ministers" class="minister-photo">
                     <a routerLink='/minister/{{minister.id}}'>
                         <img src="{{ minister.photo_url }}" style="width: 75px; height: 110px">
                         {{ minister.name }}
@@ -41,9 +41,9 @@
                 </th>
             </tr>
             </thead>
-            <tr *ngFor="let minister of meeting.non_voting_ministers">
+            <tr>
                 <td>
-                    <div class="minister-photo disabled">
+                    <div *ngFor="let minister of meeting.non_voting_ministers" class="minister-photo disabled">
                         <a routerLink='/minister/{{minister.id}}'>
                         <img src="{{ minister.photo_url }}" style="width: 75px; height: 110px">
                         {{ minister.name }}
@@ -61,9 +61,9 @@
 
             </tr>
             </thead>
-            <tr *ngFor="let minister of meeting.missing_ministers">
+            <tr>
                 <td>
-                    <div class="minister-photo missing">
+                    <div *ngFor="let minister of meeting.missing_ministers" class="minister-photo missing">
                         <a routerLink='/minister/{{minister.id}}'>
                         <img src="{{ minister.photo_url }}" style="width: 75px; height: 110px">
                         {{ minister.name }}
