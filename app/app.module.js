@@ -14,10 +14,13 @@ var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var minister_detail_component_1 = require('./minister-detail.component');
+var meeting_detail_component_1 = require('./meeting-detail.component');
 var heroes_component_1 = require('./heroes.component');
 var dashboard_component_1 = require('./dashboard.component');
 var hero_service_1 = require('./hero.service');
 var about_component_1 = require('./about.component');
+var meetings_component_1 = require('./meetings.component');
+var meeting_service_1 = require('./meeting.service');
 var bill_service_1 = require('./bill.service');
 var minister_service_1 = require('./minister.service');
 var app_routing_module_1 = require('./app-routing.module');
@@ -32,9 +35,14 @@ var AppModule = (function () {
                 heroes_component_1.HeroesComponent,
                 dashboard_component_1.DashboardComponent,
                 minister_detail_component_1.MinisterDetailComponent,
-                about_component_1.AboutComponent
+                about_component_1.AboutComponent,
+                meetings_component_1.MeetingsComponent,
+                meeting_detail_component_1.MeetingDetailComponent
             ],
-            providers: [hero_service_1.HeroService, bill_service_1.BillService, minister_service_1.MinisterService],
+            providers: [hero_service_1.HeroService,
+                bill_service_1.BillService,
+                minister_service_1.MinisterService,
+                meeting_service_1.MeetingService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

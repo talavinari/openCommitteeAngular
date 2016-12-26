@@ -15,12 +15,16 @@ var heroes_component_1 = require('./heroes.component');
 var about_component_1 = require('./about.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var minister_detail_component_1 = require('./minister-detail.component');
+var meetings_component_1 = require('./meetings.component');
+var meeting_detail_component_1 = require('./meeting-detail.component');
 var routes = [
     { path: 'minister', component: dashboard_component_1.DashboardComponent },
     { path: 'minister/:id', component: minister_detail_component_1.MinisterDetailComponent },
     { path: 'bills/:id', component: hero_detail_component_1.HeroDetailComponent },
     { path: 'bills', component: heroes_component_1.HeroesComponent },
-    { path: 'about', component: about_component_1.AboutComponent }
+    { path: 'about', component: about_component_1.AboutComponent },
+    { path: 'meetings', component: meetings_component_1.MeetingsComponent },
+    { path: 'meetings/:id', component: meeting_detail_component_1.MeetingDetailComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

@@ -13,7 +13,9 @@ export class HeroesComponent {
   selectedBill: Bill;
   bills : Bill[];
   
-  constructor(private billService: BillService , private router : Router) { }
+  constructor(private billService: BillService , private router : Router) { 
+     console.log("constructyo");
+  }
   getBills(): void {
     this.billService.getBills().then(bills => this.bills = bills);
   }

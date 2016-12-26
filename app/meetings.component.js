@@ -9,33 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var bill_service_1 = require('./bill.service');
+var meeting_service_1 = require('./meeting.service');
 var router_1 = require('@angular/router');
-var HeroesComponent = (function () {
-    function HeroesComponent(billService, router) {
-        this.billService = billService;
+var MeetingsComponent = (function () {
+    function MeetingsComponent(meetingsService, router) {
+        this.meetingsService = meetingsService;
         this.router = router;
-        console.log("constructyo");
     }
-    HeroesComponent.prototype.getBills = function () {
+    MeetingsComponent.prototype.getMeetings = function () {
         var _this = this;
-        this.billService.getBills().then(function (bills) { return _this.bills = bills; });
+        this.meetingsService.getMeetings().then(function (meetings) { return _this.meetings = meetings; });
     };
-    HeroesComponent.prototype.ngOnInit = function () {
-        this.getBills();
+    MeetingsComponent.prototype.ngOnInit = function () {
+        this.getMeetings();
     };
-    HeroesComponent.prototype.gotoDetail = function (bill) {
-        this.router.navigate(['/detail', bill.id]);
-    };
-    HeroesComponent = __decorate([
+    MeetingsComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-heroes',
-            templateUrl: 'heroes.component.html'
+            selector: 'my-meetings',
+            templateUrl: 'meetings.component.html'
         }), 
-        __metadata('design:paramtypes', [bill_service_1.BillService, router_1.Router])
-    ], HeroesComponent);
-    return HeroesComponent;
+        __metadata('design:paramtypes', [meeting_service_1.MeetingService, router_1.Router])
+    ], MeetingsComponent);
+    return MeetingsComponent;
 }());
-exports.HeroesComponent = HeroesComponent;
-//# sourceMappingURL=heroes.component.js.map
+exports.MeetingsComponent = MeetingsComponent;
+//# sourceMappingURL=meetings.component.js.map
