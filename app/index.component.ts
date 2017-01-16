@@ -3,31 +3,25 @@ import { MeetingService } from './meeting.service';
 import { Meeting } from './meeting';
 import { ActivatedRoute, Params }   from '@angular/router';
 
-
-
 @Component({
   moduleId:module.id,
-  selector: 'my-app',
-  templateUrl: 'app.component.html',
-  styleUrls:['app.component.css']
+  selector: 'my-app-index',
+  templateUrl: 'index.component.html'
 })
 
-
-export class AppComponent implements OnInit {
+export class IndexComponent implements OnInit {
 
   constructor(
   private meetingService: MeetingService, 
   private route: ActivatedRoute
   ) {}
-
-
-  title = 'ועדת שרים פתוחה';
   
   @Input()
   lastMeeting: Meeting;      
   
   ngOnInit(): void {
-    this.meetingService.getLastMeeting().then(last => this.lastMeeting = last);
+      console.log("serch for last meeting ");
+     this.meetingService.getLastMeeting().then(last => this.lastMeeting = last);
   }
       
 }

@@ -18,15 +18,28 @@ export class MeetingDetailComponent implements OnInit {
   constructor(
   private meetingService: MeetingService,
   private route: ActivatedRoute,
-  private location: Location) {}
+  private location: Location) {
+    console.log("constructor " + this.meetingId);       
+  }
 
 @Input()
 meeting: Meeting;
 
+ @Input('meetingId') meetingId: number;
+
   ngOnInit(): void {
-  this.route.params
-    .switchMap((params: Params) => this.meetingService.getMeetingDetail(+params['id']))
-    .subscribe(meeting => this.meeting = meeting);
+    //var meetId = this.meetingId || params['id'];
+    if (typeof(this.meetingId) === "undefined"){
+      this.route.params
+      .switchMap((params: Params) => this.meetingService.getMeetingDetail(+params['id']))
+      .subscribe(meeting => this.meeting = meeting);
+    }else{
+      this.route.params
+      .switchMap((params: Params) => this.meetingService.getMeetingDetail(this.meetingId))
+      .subscribe(meeting => this.meeting = meeting);
+    }
+
+    
   }
 
   goBack(): void {

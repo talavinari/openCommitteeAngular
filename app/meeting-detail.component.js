@@ -19,12 +19,21 @@ var MeetingDetailComponent = (function () {
         this.meetingService = meetingService;
         this.route = route;
         this.location = location;
+        console.log("constructor " + this.meetingId);
     }
     MeetingDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.route.params
-            .switchMap(function (params) { return _this.meetingService.getMeetingDetail(+params['id']); })
-            .subscribe(function (meeting) { return _this.meeting = meeting; });
+        //var meetId = this.meetingId || params['id'];
+        if (typeof (this.meetingId) === "undefined") {
+            this.route.params
+                .switchMap(function (params) { return _this.meetingService.getMeetingDetail(+params['id']); })
+                .subscribe(function (meeting) { return _this.meeting = meeting; });
+        }
+        else {
+            this.route.params
+                .switchMap(function (params) { return _this.meetingService.getMeetingDetail(_this.meetingId); })
+                .subscribe(function (meeting) { return _this.meeting = meeting; });
+        }
     };
     MeetingDetailComponent.prototype.goBack = function () {
         this.location.back();
@@ -33,6 +42,10 @@ var MeetingDetailComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', meeting_1.Meeting)
     ], MeetingDetailComponent.prototype, "meeting", void 0);
+    __decorate([
+        core_1.Input('meetingId'), 
+        __metadata('design:type', Number)
+    ], MeetingDetailComponent.prototype, "meetingId", void 0);
     MeetingDetailComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

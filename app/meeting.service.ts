@@ -26,5 +26,8 @@ export class MeetingService {
             .then(meetings => meetings.find(meeting => meeting.id === id));
     }
 
+    getLastMeeting():Promise<Meeting>{
+        return Promise.resolve(MEETINGS[0]);
+    }
 
 }

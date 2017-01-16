@@ -35,45 +35,43 @@
             <h3 *ngIf="!minister.coop">
                 שר זה אינו חושף את הצבעותיו!
             </h3>
-            <!--
-                {% if votes %}
-                    <section class="card card-list card-list-latest compact">
-                        <header>
-                            <h2>
-                                הצבעות
-                            </h2>
-                        </header>
+                <section *ngIf="votes" class="card card-list card-list-latest compact">
+                    <header>
+                        <h2>
+                            הצבעות
+                        </h2>
+                    </header>
+                    <table class="table table-hover">
+                        <thead>
+                        <th>
+                            שם ההצעה
+                        </th>
+                        <th>
+                            הצביע
+                        </th>
+                        </thead>
+                            <tr *ngFor="let vote of votes">
+                                <td>
+                                    <a routerLink="/bills/{{vote.bill.id}}">{{ vote.bill.name }}</a>
+                                </td>                                
+                                <td class="minister-vote" [ngClass]="{yay: vote.vote=='בעד',
+                                                                      nay: vote.vote=='נגד',
+                                                                      abstain: vote.vote =='נמנע'}" >
+                                {{vote.vote}}
+                                </td>
+                            </tr>
 
-
-                        <table class="table table-hover">
-                            <thead>
-                            <th>
-                                שם ההצעה
-                            </th>
-                            <th>
-                                הצביע
-                            </th>
-                            </thead>
-                            {% for v in votes %}
-                                <tr>
-                                    <td><a href="{% url 'bill' v.bill.id %}">{{ v.bill }}</a></td>
-                                    <td class="minister-vote {{ v.vote | vote_style }}">{{ v.vote }}</td>
-                                </tr>
-                            {% endfor %}
-
-                        </table>
-                    </section>
-                {% else %}
-                    <h3>
+                    </table>
+                </section>
+                    <h3 *ngIf="!votes">
                                 אין הצבעות
                     </h3>
-                {% endif %}
-            {% endif %}-->
         </div>
         <div class="col-md-4 hidden-sm hidden-xs">
             <div class="pull-left">
                 <img src="{{ minister.photo_url}}">
             </div>
         </div>
+        
     </div>
 </div>

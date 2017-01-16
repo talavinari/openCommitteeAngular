@@ -14,21 +14,17 @@
         </div>
         <div class="collapse navbar-collapse" id="committee-menu">
             <ul class="nav navbar-nav navbar-right">
-                <!--<li class="{% active_page request "bills" %}">-->
                 <li>
                     <a routerLink="/bills" routerLinkActive="active">
                         הצעות החוק
                     </a>
                 </li>
-                <!--<li class="{% active_page request "ministers" %}">-->
                 <li>
                     <a routerLink="/minister" routerLinkActive="active">
                         השרים
                     </a>
                 </li>
-                <!--<li class="{% active_page request "meetings" %}">-->
                 <li>
-                    <!--<a href="{% url 'meetings' %}">-->
                     <a routerLink="/meetings" routerLinkActive="active">
                     ישיבות הועדה
                     </a>
@@ -51,7 +47,6 @@
             </ul>
             <ul class="nav navbar-nav navbar-left">
                 <li>
-                <!--<li class="{% active_page request "about" %}">-->
                     <a routerLink="/about" routerLinkActive="active">
                         אודות
                     </a>
@@ -65,4 +60,4 @@
         </div>
     </div>
 </nav>
-<router-outlet></router-outlet> 
+<router-outlet></router-outlet>

@@ -28,6 +28,9 @@ var MeetingService = (function () {
         return this.getMeetingsWithDetails()
             .then(function (meetings) { return meetings.find(function (meeting) { return meeting.id === id; }); });
     };
+    MeetingService.prototype.getLastMeeting = function () {
+        return Promise.resolve(mock_meetings_1.MEETINGS[0]);
+    };
     MeetingService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

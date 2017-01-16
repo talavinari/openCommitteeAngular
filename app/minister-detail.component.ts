@@ -5,6 +5,7 @@ import 'rxjs/add/operator/switchMap';
 
 import { MinisterService } from './minister.service';
 import { Minister } from './minister';
+import { Vote } from './vote';
 
 
 @Component({
@@ -23,10 +24,17 @@ export class MinisterDetailComponent implements OnInit {
 	@Input()
 	minister: Minister;
 
+  @Input()
+  votes : Vote[];
+
   ngOnInit(): void {
   this.route.params
     .switchMap((params: Params) => this.ministerService.getMinsterDetail(+params['id']))
     .subscribe(minister => this.minister = minister);
+    
+    this.route.params
+    .switchMap((params: Params) => this.ministerService.getMinisterVotes(+params['id']))
+    .subscribe(votes => this.votes = votes);
   }
 
   goBack(): void {

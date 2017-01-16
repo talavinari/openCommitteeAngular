@@ -1,0 +1,97 @@
+<div class="container">
+        <div class="row">
+            <div class="cards col-md-12">
+                <section class="card card-list card-list-latest compact">
+                    <header>
+                        <h2>
+                            רקע
+                        </h2>
+                    </header>
+                    <ul>
+                        <li>
+                            ועדת השרים לענייני חקיקה היא המקום בו הממשלה מחליטה האם היא תומכת או מתנגדת להצעות חוק.
+                             כל הצעות החוק עוברות דרך הועדה, וללא תמיכת הממשלה אין להצעת החוק כמעט שום סיכוי לעבור בכנסת.
+                             הועדה מתנהלת בחוסר שקיפות חריג, כך שכל המידע באתר נמסר מרצונם החופשי של שרים החברים בועדה ותומכים בשקיפות.
+                            אנו משתפים פעולה עם מיזם <a href="http://shkifut.info" target="_blank">׳מאה ימים של שקיפות׳</a> שמדי שבוע מבקשים מהשרים לחשוף את הצבעותיהם בצורה וולנטארית.
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        
+<div *ngIf="lastMeeting">
+    <my-meeting-detail [meetingId]="lastMeeting.id"></my-meeting-detail>
+</div>
+
+ 
+<!--<my-meeting-detail> [meeting]="lastMeeting.id" </my-meeting-detail>-->
+
+        <!--<div class="row">
+            <div class="cards col-md-12">
+                <section class="card card-list card-list-latest compact">
+                    <header>
+                        <h2>
+ישיבה אחרונה - {{ last_meeting.took_place }}
+                        </h2>
+                    </header>
+                    {% include "committeeVotes/meeting_ministers.html" with is_index=True %}
+                </section>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="cards col-md-12">
+                <section class="card card-list card-list-latest compact">
+                    <header>
+                        <h2>
+                            הצעות חוק אחרונות
+                        </h2>
+                    </header>
+
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="text-right">
+                                שם ההצעה
+                            </th>
+                            <th>
+                                החלטת הועדה
+                            </th>
+                        </tr>
+                        </thead>
+                        {% for b in bills %}
+
+                            <tr>
+                                <td>
+                                    <a href="{% url 'bill' b.id %}">
+                                        {{ b.name }}
+
+                                    </a>
+                                </td>
+                                <td class="minister-vote {{ b.passed | yesno:"yay,nay" }}">
+                                    {{ b.passed | yesno:"בעד,נגד" }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>
+                                <div class="pull-left">
+                                    <a href="{% url 'bills' %}" class="btn btn-primary pull-left" role="button">
+                                        עוד
+                                        <span class="fa fa-plus"></span>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+                </section>
+
+
+            </div>
+
+        </div>-->
+    </div>

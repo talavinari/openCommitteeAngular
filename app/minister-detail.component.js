@@ -25,6 +25,9 @@ var MinisterDetailComponent = (function () {
         this.route.params
             .switchMap(function (params) { return _this.ministerService.getMinsterDetail(+params['id']); })
             .subscribe(function (minister) { return _this.minister = minister; });
+        this.route.params
+            .switchMap(function (params) { return _this.ministerService.getMinisterVotes(+params['id']); })
+            .subscribe(function (votes) { return _this.votes = votes; });
     };
     MinisterDetailComponent.prototype.goBack = function () {
         this.location.back();
@@ -33,6 +36,10 @@ var MinisterDetailComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', minister_1.Minister)
     ], MinisterDetailComponent.prototype, "minister", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], MinisterDetailComponent.prototype, "votes", void 0);
     MinisterDetailComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

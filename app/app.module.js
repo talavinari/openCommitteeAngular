@@ -20,6 +20,7 @@ var dashboard_component_1 = require('./dashboard.component');
 var hero_service_1 = require('./hero.service');
 var about_component_1 = require('./about.component');
 var meetings_component_1 = require('./meetings.component');
+var index_component_1 = require('./index.component');
 var meeting_service_1 = require('./meeting.service');
 var bill_service_1 = require('./bill.service');
 var minister_service_1 = require('./minister.service');
@@ -37,7 +38,8 @@ var AppModule = (function () {
                 minister_detail_component_1.MinisterDetailComponent,
                 about_component_1.AboutComponent,
                 meetings_component_1.MeetingsComponent,
-                meeting_detail_component_1.MeetingDetailComponent
+                meeting_detail_component_1.MeetingDetailComponent,
+                index_component_1.IndexComponent
             ],
             providers: [hero_service_1.HeroService,
                 bill_service_1.BillService,

@@ -13,6 +13,8 @@ import { DashboardComponent }     from './dashboard.component';
 import { HeroService }         from './hero.service';
 import { AboutComponent }         from './about.component';
 import { MeetingsComponent }         from './meetings.component';
+import { IndexComponent }         from './index.component';
+
 
 import { MeetingService }         from './meeting.service';
 import { BillService }         from './bill.service';
@@ -30,7 +32,8 @@ import { AppRoutingModule }     from './app-routing.module';
       MinisterDetailComponent,
       AboutComponent,
       MeetingsComponent,
-      MeetingDetailComponent
+      MeetingDetailComponent,
+      IndexComponent
 	],
   providers: [HeroService,
               BillService,

@@ -12,30 +12,29 @@ var core_1 = require('@angular/core');
 var meeting_service_1 = require('./meeting.service');
 var meeting_1 = require('./meeting');
 var router_1 = require('@angular/router');
-var AppComponent = (function () {
-    function AppComponent(meetingService, route) {
+var IndexComponent = (function () {
+    function IndexComponent(meetingService, route) {
         this.meetingService = meetingService;
         this.route = route;
-        this.title = 'ועדת שרים פתוחה';
     }
-    AppComponent.prototype.ngOnInit = function () {
+    IndexComponent.prototype.ngOnInit = function () {
         var _this = this;
+        console.log("serch for last meeting ");
         this.meetingService.getLastMeeting().then(function (last) { return _this.lastMeeting = last; });
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', meeting_1.Meeting)
-    ], AppComponent.prototype, "lastMeeting", void 0);
-    AppComponent = __decorate([
+    ], IndexComponent.prototype, "lastMeeting", void 0);
+    IndexComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-app',
-            templateUrl: 'app.component.html',
-            styleUrls: ['app.component.css']
+            selector: 'my-app-index',
+            templateUrl: 'index.component.html'
         }), 
         __metadata('design:paramtypes', [meeting_service_1.MeetingService, router_1.ActivatedRoute])
-    ], AppComponent);
-    return AppComponent;
+    ], IndexComponent);
+    return IndexComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.IndexComponent = IndexComponent;
+//# sourceMappingURL=index.component.js.map

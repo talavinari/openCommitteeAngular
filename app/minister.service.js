@@ -10,11 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var mock_minister_1 = require('./mock-minister');
+var mock_vote_1 = require('./mock-vote');
 var MinisterService = (function () {
     function MinisterService() {
     }
     MinisterService.prototype.getMinisters = function () {
         return Promise.resolve(mock_minister_1.MINISTERS);
+    };
+    MinisterService.prototype.getMinisterVotes = function (id) {
+        return Promise.resolve(mock_vote_1.VOTES);
     };
     MinisterService.prototype.getMinistersWithDetails = function () {
         return Promise.resolve(mock_minister_1.MINISTERS_DETAILS);

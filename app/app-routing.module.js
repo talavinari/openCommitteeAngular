@@ -16,6 +16,7 @@ var about_component_1 = require('./about.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var minister_detail_component_1 = require('./minister-detail.component');
 var meetings_component_1 = require('./meetings.component');
+var index_component_1 = require('./index.component');
 var meeting_detail_component_1 = require('./meeting-detail.component');
 var routes = [
     { path: 'minister', component: dashboard_component_1.DashboardComponent },
@@ -24,7 +25,8 @@ var routes = [
     { path: 'bills', component: heroes_component_1.HeroesComponent },
     { path: 'about', component: about_component_1.AboutComponent },
     { path: 'meetings', component: meetings_component_1.MeetingsComponent },
-    { path: 'meetings/:id', component: meeting_detail_component_1.MeetingDetailComponent }
+    { path: 'meetings/:id', component: meeting_detail_component_1.MeetingDetailComponent },
+    { path: '', component: index_component_1.IndexComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
