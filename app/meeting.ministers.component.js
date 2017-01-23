@@ -14,15 +14,17 @@ var common_1 = require('@angular/common');
 require('rxjs/add/operator/switchMap');
 var meeting_service_1 = require('./meeting.service');
 var meeting_1 = require('./meeting');
-var MeetingDetailComponent = (function () {
-    function MeetingDetailComponent(meetingService, route, location) {
+var MeetingMinistersComponent = (function () {
+    function MeetingMinistersComponent(meetingService, route, location) {
         this.meetingService = meetingService;
         this.route = route;
         this.location = location;
+        this.showPlusButton = false;
     }
-    MeetingDetailComponent.prototype.ngOnInit = function () {
+    MeetingMinistersComponent.prototype.ngOnInit = function () {
         var _this = this;
         //var meetId = this.meetingId || params['id'];
+        console.info(this.meetingId);
         if (typeof (this.meetingId) === "undefined") {
             this.route.params
                 .switchMap(function (params) { return _this.meetingService.getMeetingDetail(+params['id']); })
@@ -34,26 +36,30 @@ var MeetingDetailComponent = (function () {
                 .subscribe(function (meeting) { return _this.meeting = meeting; });
         }
     };
-    MeetingDetailComponent.prototype.goBack = function () {
+    MeetingMinistersComponent.prototype.goBack = function () {
         this.location.back();
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', meeting_1.Meeting)
-    ], MeetingDetailComponent.prototype, "meeting", void 0);
+    ], MeetingMinistersComponent.prototype, "meeting", void 0);
     __decorate([
         core_1.Input('meetingId'), 
         __metadata('design:type', Number)
-    ], MeetingDetailComponent.prototype, "meetingId", void 0);
-    MeetingDetailComponent = __decorate([
+    ], MeetingMinistersComponent.prototype, "meetingId", void 0);
+    __decorate([
+        core_1.Input('showPlusButton'), 
+        __metadata('design:type', Boolean)
+    ], MeetingMinistersComponent.prototype, "showPlusButton", void 0);
+    MeetingMinistersComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-meeting-detail',
-            templateUrl: 'meeting-detail.component.html'
+            selector: 'meeting-ministers',
+            templateUrl: 'meeting.ministers.component.html'
         }), 
         __metadata('design:paramtypes', [meeting_service_1.MeetingService, router_1.ActivatedRoute, common_1.Location])
-    ], MeetingDetailComponent);
-    return MeetingDetailComponent;
+    ], MeetingMinistersComponent);
+    return MeetingMinistersComponent;
 }());
-exports.MeetingDetailComponent = MeetingDetailComponent;
-//# sourceMappingURL=meeting-detail.component.js.map
+exports.MeetingMinistersComponent = MeetingMinistersComponent;
+//# sourceMappingURL=meeting.ministers.component.js.map

@@ -8,12 +8,12 @@ import { Meeting } from './meeting';
 
 
 @Component({
-  moduleId: module.id,
-  selector: 'my-meeting-detail',
-  templateUrl: 'meeting-detail.component.html'
+  moduleId:module.id,
+  selector: 'meeting-ministers',
+  templateUrl: 'meeting.ministers.component.html'
 })
 
-export class MeetingDetailComponent implements OnInit {
+export class MeetingMinistersComponent implements OnInit {
 
   constructor(
   private meetingService: MeetingService,
@@ -26,8 +26,12 @@ meeting: Meeting;
 
  @Input('meetingId') meetingId: number;
 
+ 
+ @Input('showPlusButton') showPlusButton: boolean = false;
+
   ngOnInit(): void {
     //var meetId = this.meetingId || params['id'];
+    console.info(this.meetingId);
     if (typeof(this.meetingId) === "undefined"){
       this.route.params
       .switchMap((params: Params) => this.meetingService.getMeetingDetail(+params['id']))
@@ -37,8 +41,6 @@ meeting: Meeting;
       .switchMap((params: Params) => this.meetingService.getMeetingDetail(this.meetingId))
       .subscribe(meeting => this.meeting = meeting);
     }
-
-    
   }
 
   goBack(): void {

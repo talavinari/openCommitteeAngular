@@ -12,15 +12,21 @@ var core_1 = require('@angular/core');
 var meeting_service_1 = require('./meeting.service');
 var meeting_1 = require('./meeting');
 var router_1 = require('@angular/router');
+var bill_service_1 = require('./bill.service');
 var IndexComponent = (function () {
-    function IndexComponent(meetingService, route) {
+    function IndexComponent(meetingService, route, billService) {
         this.meetingService = meetingService;
         this.route = route;
+        this.billService = billService;
     }
+    IndexComponent.prototype.getBills = function () {
+        var _this = this;
+        this.billService.getBills().then(function (bills) { return _this.bills = bills; });
+    };
     IndexComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log("serch for last meeting ");
         this.meetingService.getLastMeeting().then(function (last) { return _this.lastMeeting = last; });
+        this.getBills();
     };
     __decorate([
         core_1.Input(), 
@@ -32,7 +38,7 @@ var IndexComponent = (function () {
             selector: 'my-app-index',
             templateUrl: 'index.component.html'
         }), 
-        __metadata('design:paramtypes', [meeting_service_1.MeetingService, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [meeting_service_1.MeetingService, router_1.ActivatedRoute, bill_service_1.BillService])
     ], IndexComponent);
     return IndexComponent;
 }());

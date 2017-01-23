@@ -13,66 +13,7 @@
             </h3>
 
         <!-- here starts inner html should be extracted to other html like meeting_ministers.html !-->    
-        <table class="table">
-            <thead>
-            <tr *ngIf="meeting.voting_ministers.length > 0">
-                <th class="text-right">
-                    שרים שחשפו את הצבעותיהם
-                </th>
-            </tr>
-            </thead>
-            <tr>
-                <td>
-                    <div *ngFor="let minister of meeting.voting_ministers" class="minister-photo">
-                    <a routerLink='/minister/{{minister.id}}'>
-                        <img src="{{ minister.photo_url }}" style="width: 75px; height: 110px">
-                        {{ minister.name }}
-                    </a>
-                    </div>        
-                </td>
-            </tr>
-        </table>
-
-        <table class="table">
-            <thead>
-            <tr *ngIf="meeting.non_voting_ministers.length > 0">
-                <th class="text-right">
-                    שרים שלא חשפו את הצבעותיהם
-                </th>
-            </tr>
-            </thead>
-            <tr>
-                <td>
-                    <div *ngFor="let minister of meeting.non_voting_ministers" class="minister-photo disabled">
-                        <a routerLink='/minister/{{minister.id}}'>
-                        <img src="{{ minister.photo_url }}" style="width: 75px; height: 110px">
-                        {{ minister.name }}
-                    </a>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <table class="table">
-            <thead>
-            <tr *ngIf="meeting.missing_ministers.length > 0">
-                <th class="text-right">
-                    שרים שנעדרו מהישיבה
-                </th>
-
-            </tr>
-            </thead>
-            <tr>
-                <td>
-                    <div *ngFor="let minister of meeting.missing_ministers" class="minister-photo missing">
-                        <a routerLink='/minister/{{minister.id}}'>
-                        <img src="{{ minister.photo_url }}" style="width: 75px; height: 110px">
-                        {{ minister.name }}
-                    </a>
-                    </div>
-                </td>
-            </tr>
-
-        </table>
+        <meeting-ministers [meetingId]="meeting.id"></meeting-ministers>
     <h3>
         הצעות החוק שעלו בישיבה
     </h3>

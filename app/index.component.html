@@ -18,26 +18,20 @@
                 </section>
             </div>
         </div>
-        
-<div *ngIf="lastMeeting">
-    <my-meeting-detail [meetingId]="lastMeeting.id"></my-meeting-detail>
-</div>
 
- 
-<!--<my-meeting-detail> [meeting]="lastMeeting.id" </my-meeting-detail>-->
-
-        <!--<div class="row">
-            <div class="cards col-md-12">
-                <section class="card card-list card-list-latest compact">
-                    <header>
-                        <h2>
-ישיבה אחרונה - {{ last_meeting.took_place }}
-                        </h2>
-                    </header>
-                    {% include "committeeVotes/meeting_ministers.html" with is_index=True %}
-                </section>
-            </div>
+    <div *ngIf="lastMeeting" class="row">
+        <div class="cards col-md-12">
+            <section class="card card-list card-list-latest compact">
+                <header>
+                    <h2>
+                    ישיבה אחרונה - {{ lastMeeting.took_place }}
+                    </h2>
+                </header>
+                <meeting-ministers [showPlusButton]="true" [meetingId]="lastMeeting.id"></meeting-ministers>
+            </section>
         </div>
+    </div>
+
 
         <div class="row">
             <div class="cards col-md-12">
@@ -59,27 +53,19 @@
                             </th>
                         </tr>
                         </thead>
-                        {% for b in bills %}
-
-                            <tr>
-                                <td>
-                                    <a href="{% url 'bill' b.id %}">
-                                        {{ b.name }}
-
-                                    </a>
-                                </td>
-                                <td class="minister-vote {{ b.passed | yesno:"yay,nay" }}">
-                                    {{ b.passed | yesno:"בעד,נגד" }}
+                            <tr *ngFor="let bill of bills">
+                                <td><a routerLink='/bills/{{bill.id}}'>{{bill.name}}</a></td>
+                                <td class="minister-vote" [ngClass]="{yay: bill.passed,nay: !bill.passed}" >
+                                        {{true == bill.passed ? 'בעד' : 'נגד' }}
                                 </td>
                             </tr>
-                        {% endfor %}
                         <tr>
                             <td>
 
                             </td>
                             <td>
                                 <div class="pull-left">
-                                    <a href="{% url 'bills' %}" class="btn btn-primary pull-left" role="button">
+                                    <a routerLink='/bills/' class="btn btn-primary pull-left" role="button">
                                         עוד
                                         <span class="fa fa-plus"></span>
                                     </a>
@@ -89,9 +75,7 @@
 
                     </table>
                 </section>
-
-
             </div>
 
-        </div>-->
+        </div>
     </div>
