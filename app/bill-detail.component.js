@@ -14,34 +14,34 @@ var common_1 = require('@angular/common');
 require('rxjs/add/operator/switchMap');
 var bill_service_1 = require('./bill.service');
 var bill_1 = require('./bill');
-var HeroDetailComponent = (function () {
-    function HeroDetailComponent(billService, route, location) {
+var BillDetailComponent = (function () {
+    function BillDetailComponent(billService, route, location) {
         this.billService = billService;
         this.route = route;
         this.location = location;
     }
-    HeroDetailComponent.prototype.ngOnInit = function () {
+    BillDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
             .switchMap(function (params) { return _this.billService.getBill(+params['id']); })
             .subscribe(function (bill) { return _this.bill = bill; });
     };
-    HeroDetailComponent.prototype.goBack = function () {
+    BillDetailComponent.prototype.goBack = function () {
         this.location.back();
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', bill_1.Bill)
-    ], HeroDetailComponent.prototype, "bill", void 0);
-    HeroDetailComponent = __decorate([
+    ], BillDetailComponent.prototype, "bill", void 0);
+    BillDetailComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-hero-detail',
-            templateUrl: 'hero-detail.component.html'
+            templateUrl: 'bill-detail.component.html'
         }), 
         __metadata('design:paramtypes', [bill_service_1.BillService, router_1.ActivatedRoute, common_1.Location])
-    ], HeroDetailComponent);
-    return HeroDetailComponent;
+    ], BillDetailComponent);
+    return BillDetailComponent;
 }());
-exports.HeroDetailComponent = HeroDetailComponent;
-//# sourceMappingURL=hero-detail.component.js.map
+exports.BillDetailComponent = BillDetailComponent;
+//# sourceMappingURL=bill-detail.component.js.map

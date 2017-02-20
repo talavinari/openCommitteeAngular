@@ -30,8 +30,7 @@ var AppComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
-            templateUrl: 'app.component.html',
-            styleUrls: ['app.component.css']
+            templateUrl: 'app.component.html'
         }), 
         __metadata('design:paramtypes', [meeting_service_1.MeetingService, router_1.ActivatedRoute])
     ], AppComponent);

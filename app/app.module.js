@@ -12,12 +12,11 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
-var hero_detail_component_1 = require('./hero-detail.component');
+var bill_detail_component_1 = require('./bill-detail.component');
 var minister_detail_component_1 = require('./minister-detail.component');
 var meeting_detail_component_1 = require('./meeting-detail.component');
-var heroes_component_1 = require('./heroes.component');
-var dashboard_component_1 = require('./dashboard.component');
-var hero_service_1 = require('./hero.service');
+var bills_component_1 = require('./bills.component');
+var minister_component_1 = require('./minister.component');
 var about_component_1 = require('./about.component');
 var meetings_component_1 = require('./meetings.component');
 var index_component_1 = require('./index.component');
@@ -33,9 +32,9 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_module_1.AppRoutingModule],
             declarations: [app_component_1.AppComponent,
-                hero_detail_component_1.HeroDetailComponent,
-                heroes_component_1.HeroesComponent,
-                dashboard_component_1.DashboardComponent,
+                bill_detail_component_1.BillDetailComponent,
+                bills_component_1.BillsComponent,
+                minister_component_1.MinisterComponent,
                 minister_detail_component_1.MinisterDetailComponent,
                 about_component_1.AboutComponent,
                 meetings_component_1.MeetingsComponent,
@@ -43,8 +42,7 @@ var AppModule = (function () {
                 index_component_1.IndexComponent,
                 meeting_ministers_component_1.MeetingMinistersComponent
             ],
-            providers: [hero_service_1.HeroService,
-                bill_service_1.BillService,
+            providers: [bill_service_1.BillService,
                 minister_service_1.MinisterService,
                 meeting_service_1.MeetingService],
             bootstrap: [app_component_1.AppComponent]

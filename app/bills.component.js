@@ -11,31 +11,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var bill_service_1 = require('./bill.service');
 var router_1 = require('@angular/router');
-var HeroesComponent = (function () {
-    function HeroesComponent(billService, router) {
+var BillsComponent = (function () {
+    function BillsComponent(billService, router) {
         this.billService = billService;
         this.router = router;
-        console.log("constructyo");
     }
-    HeroesComponent.prototype.getBills = function () {
+    BillsComponent.prototype.getBills = function () {
         var _this = this;
         this.billService.getBills().then(function (bills) { return _this.bills = bills; });
     };
-    HeroesComponent.prototype.ngOnInit = function () {
+    BillsComponent.prototype.ngOnInit = function () {
         this.getBills();
     };
-    HeroesComponent.prototype.gotoDetail = function (bill) {
+    BillsComponent.prototype.gotoDetail = function (bill) {
         this.router.navigate(['/detail', bill.id]);
     };
-    HeroesComponent = __decorate([
+    BillsComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-heroes',
-            templateUrl: 'heroes.component.html'
+            templateUrl: 'bills.component.html'
         }), 
         __metadata('design:paramtypes', [bill_service_1.BillService, router_1.Router])
-    ], HeroesComponent);
-    return HeroesComponent;
+    ], BillsComponent);
+    return BillsComponent;
 }());
-exports.HeroesComponent = HeroesComponent;
-//# sourceMappingURL=heroes.component.js.map
+exports.BillsComponent = BillsComponent;
+//# sourceMappingURL=bills.component.js.map

@@ -6,16 +6,16 @@ import { Router } from '@angular/router';
 @Component({
   moduleId:module.id,
   selector: 'my-heroes',
-  templateUrl: 'heroes.component.html'
+  templateUrl: 'bills.component.html'
 })
 
-export class HeroesComponent { 
+export class BillsComponent { 
   selectedBill: Bill;
   bills : Bill[];
   
   constructor(private billService: BillService , private router : Router) { 
-     console.log("constructyo");
   }
+  
   getBills(): void {
     this.billService.getBills().then(bills => this.bills = bills);
   }

@@ -6,9 +6,9 @@ import { MinisterService } from './minister.service';
 @Component({
   moduleId: module.id,
   selector: 'my-dashboard',
-  templateUrl: 'dashboard.component.html'
+  templateUrl: 'minister.component.html'
 })
-export class DashboardComponent {
+export class MinisterComponent {
    ministers: Minister[] = [];
 
    constructor(private ministerService: MinisterService) { }

@@ -9,9 +9,9 @@ import { Bill } from './bill';
 @Component({
   moduleId: module.id,
   selector: 'my-hero-detail',
-  templateUrl: 'hero-detail.component.html'
+  templateUrl: 'bill-detail.component.html'
 })
-export class HeroDetailComponent implements OnInit {
+export class BillDetailComponent implements OnInit {
 
   constructor(
   private billService: BillService,

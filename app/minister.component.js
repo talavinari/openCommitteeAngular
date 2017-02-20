@@ -10,25 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var minister_service_1 = require('./minister.service');
-var DashboardComponent = (function () {
-    function DashboardComponent(ministerService) {
+var MinisterComponent = (function () {
+    function MinisterComponent(ministerService) {
         this.ministerService = ministerService;
         this.ministers = [];
     }
-    DashboardComponent.prototype.ngOnInit = function () {
+    MinisterComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.ministerService.getMinisters()
             .then(function (ministers) { return _this.ministers = ministers; });
     };
-    DashboardComponent = __decorate([
+    MinisterComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-dashboard',
-            templateUrl: 'dashboard.component.html'
+            templateUrl: 'minister.component.html'
         }), 
         __metadata('design:paramtypes', [minister_service_1.MinisterService])
-    ], DashboardComponent);
-    return DashboardComponent;
+    ], MinisterComponent);
+    return MinisterComponent;
 }());
-exports.DashboardComponent = DashboardComponent;
-//# sourceMappingURL=dashboard.component.js.map
+exports.MinisterComponent = MinisterComponent;
+//# sourceMappingURL=minister.component.js.map

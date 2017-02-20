@@ -10,19 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var dashboard_component_1 = require('./dashboard.component');
-var heroes_component_1 = require('./heroes.component');
+var minister_component_1 = require('./minister.component');
+var bills_component_1 = require('./bills.component');
 var about_component_1 = require('./about.component');
-var hero_detail_component_1 = require('./hero-detail.component');
+var bill_detail_component_1 = require('./bill-detail.component');
 var minister_detail_component_1 = require('./minister-detail.component');
 var meetings_component_1 = require('./meetings.component');
 var index_component_1 = require('./index.component');
 var meeting_detail_component_1 = require('./meeting-detail.component');
 var routes = [
-    { path: 'minister', component: dashboard_component_1.DashboardComponent },
+    { path: 'minister', component: minister_component_1.MinisterComponent },
     { path: 'minister/:id', component: minister_detail_component_1.MinisterDetailComponent },
-    { path: 'bills/:id', component: hero_detail_component_1.HeroDetailComponent },
-    { path: 'bills', component: heroes_component_1.HeroesComponent },
+    { path: 'bills/:id', component: bill_detail_component_1.BillDetailComponent },
+    { path: 'bills', component: bills_component_1.BillsComponent },
     { path: 'about', component: about_component_1.AboutComponent },
     { path: 'meetings', component: meetings_component_1.MeetingsComponent },
     { path: 'meetings/:id', component: meeting_detail_component_1.MeetingDetailComponent },
